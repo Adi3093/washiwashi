@@ -105,7 +105,7 @@ body{
 
 /*  banner  */
 .banner {
-  background-image: url(assets/image/banner.png);
+  background-image: url(.../assets/image/banner.png);
   background-size: cover;
   background-position: center;
   height: 60vh;
