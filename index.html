@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Washi-washi Cihuyyy — Home Of Traditional Sushi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="/assets/css/style.css"/>
+</head>
+<body>
+  <a class="skip-link" href="#menu">Lewati ke menu</a>
+
+  <header class="site-header">
+    <div class="brand">
+      <div class="logo" style="font-size: 50px;">🍥</div>
+      <div class="titles">
+        <h1>Washi‑washi Cihuyyy</h1>
+        <p class="tagline">Home of Traditional Sushi</p>
+      </div>
+    </div>
+
+    <button class="cart-toggle" aria-controls="cart" aria-expanded="false">
+      <span style="font-size: 20px;">🛒</span>
+      <span class="cart-count" id="cartCount">0</span>
+    </button>
+
+    <audio src="assets/sfx/addToCart.mp3" preload="auto" id="cartSound"></audio>
+    <audio src="assets/sfx/ordered.mp3" preload="auto" id="buySound"></audio>
+  </header>
+
+  <button id="floatingCart" class="floating-cart" aria-controls="cart" aria-expanded="false">
+    🛒
+    <span id="floatingCartCount">0</span>
+  </button>
+
+  <main>
+    <section class="banner">
+      <div class="banner-content">
+        <p class="banner-sub">Hai, Selamat datang</p>
+        <h1 class="banner-title">Washi-washi Cihuyyy</h1>
+        <p class="banner-tagline">Home Of Traditional Sushi</p>
+      </div>
+    </section>
+
+    <section class="hero" aria-label="Tentang restoran">
+      <div class="hero-inner">
+        <h2>Washi-washi Cihuyyy</h2>
+        <p>
+          Di <strong>Washi‑washi Cihuyyy</strong>, kami menyajikan sushi dengan
+          sentuhan modern, suasana elegan, dan rasa yang *cihuyyy*!
+          nikmati sushi tradisional dengan nuansa yang modern dan elegan.
+        </p>
+        <a href="#menu" class="btn-primary">Lihat Menu</a>
+      </div>
+    </section>
+
+    <section id="menu" class="menu-section" aria-label="Daftar Menu">
+      <div class="section-head">
+        <h3>Menu</h3>
+        <div class="menu-filters">
+          <button href="#menu" class="filter-btn" data-filter="sushi">Sushi</button>
+          <button href="#menu" class="filter-btn" data-filter="drink">Minuman</button>
+          <button href="#menu" class="filter-btn" data-filter="all">Semua</button>
+        </div>
+      </div>
+
+      <div class="menu-grid" id="menuGrid">
+         <div class="menu-grid">
+    <article class="card" data-category="sushi">
+      <img src="assets/image/maki.png" alt="maki sushi" class="menu-img">
+      <h4>Makizushi</h4>
+      <p>Rolled Sushi, formed with bamboo mat (Makisu)</p>
+      <div class="price">Rp25.000</div>
+      <button class="add" data-id="makizushi" onclick="addToChart()">+ Tambahkan</button>
+    </article>
+
+    <article class="card" data-category="sushi">
+      <img src="assets/image/nigirizushi.png" alt="nigirizushi" class="menu-img">
+      <h4>Nigirizushi</h4>
+      <p>Hand pressed sushi, pressed with sushi rice.</p>
+      <div class="price">Rp25.000</div>
+      <button class="add" data-id="nigirizushi" onclick="addToChart()">+ Tambahkan</button>
+    </article>
+
+    <article class="card" data-category="sushi">
+      <img src="assets/image/gunkamaki.png" alt="gunkanmaki" class="menu-img">
+      <h4>Gunkanmaki</h4>
+      <p>Oval shaped sushi, wrapped with nori and covered with various toppings.</p>
+      <div class="price">Rp25.000</div>
+      <button class="add" data-id="gunkanmaki" onclick="addToChart()">+ Tambahkan</button>
+    </article>
+
+    <article class="card" data-category="sushi">
+      <img src="assets/image/chirashizushi.png" alt="chirashizushi" class="menu-img">
+      <h4>Chirashizushi</h4>
+      <p>A bowl of sushi rice plues wide group of ingredients.</p>
+      <div class="price">Rp50.000</div>
+      <button class="add" data-id="chirashizushi" onclick="addToChart()">+ Tambahkan</button>
+    </article>
+
+    <article class="card" data-category="sushi">
+      <img src="assets/image/oshizushi.png" alt="oshizushi" class="menu-img">
+      <h4>Oshizushi</h4>
+      <p>Rectangular shaped sushi known as pressed or box sushi.</p>
+      <div class="price">Rp100.000</div>
+      <button class="add" data-id="oshizuzhi" onclick="addToChart()">+ Tambahkan</button>
+    </article>
+
+    <article class="card" data-category="sushi">
+      <img src="assets/image/inarizushi.png" alt="inarizushi" class="menu-img">
+      <h4>Inarizhushi</h4>
+      <p>Pouch of fried tofu filled with sushi rice.</p>
+      <div class="price">Rp35.000</div>
+      <button class="add" data-id="inarizhushi" onclick="addToChart()">+ Tambahkan</button>
+    </article>
+
+    <article class="card" data-category="drink">
+      <img src="assets/image/lemontea.png" alt="lemontea" class="menu-img">
+      <h4>Lemon Tea</h4>
+      <p>fresh tea with fresh squeezed lemon.</p>
+      <div class="price">Rp10.000</div>
+      <button class="add" data-id="lemontea" onclick="addToChart()">+ Tambahkan</button>
+    </article>
+
+    <article class="card">
+      <img src="assets/image/mojito.png" alt="mojito" class="menu-img">
+      <h4>Blue Sky Mojito</h4>
+      <p>Mojito with sweet Mint flavor and Blue Hawaii syrup.</p>
+      <div class="price">Rp15.000</div>
+      <button class="add" data-id="mojito" onclick="addToChart()">+ Tambahkan</button>
+    </article>
+
+    <article class="card" data-category="drink">
+      <img src="assets/image/matcha machiato.png" alt="matcha" class="menu-img">
+      <h4>Matcha Macchiato</h4>
+      <p>Matcha milk with macchiato cream</p>
+      <div class="price">Rp20.000</div>
+      <button class="add" data-id="matcha" onclick="addToChart()">+ Tambahkan</button>
+    </article>
+
+    <article class="card" data-category="drink">
+      <img src="assets/image/choco.png" alt="choco" class="menu-img">
+      <h4>Choco Macchiato</h4>
+      <p>chocolate milk with macchiato cream and chocochip</p>
+      <div class="price">Rp20.000</div>
+      <button class="add" data-id="choco" onclick="addToChart()">+ Tambahkan</button>
+    </article>
+
+    <article class="card" data-category="drink">
+      <img src="assets/image/blackcurrant.png" alt="blackcurant" class="menu-img">
+      <h4>Blackcurrant</h4>
+      <p>fresh grape flavored drink</p>
+      <div class="price">Rp20.000</div>
+      <button class="add" data-id="grape" onclick="addToChart()">+ Tambahkan</button>
+    </article>
+  </div>
+      </div>
+    </section>
+
+    <section id="testimonial" class="testimonial-section">
+      <h2>Apa kata mereka?</h2>
+      <div class="testimonial-grid" id="testimonial-list">
+        <article class="testimonial-card">
+          <p>"bapakna tukang batagor"</p>
+          <div class="stars">★★★★★</div>
+          <h4>- Adi</h4>
+        </article>
+        <article class="testimonial-card">
+          <p>"HIDUP JOKOWI!!!!"</p>
+          <div class="stars">★★★★★</div>
+          <h4>- Nabil</h4>
+        </article>
+      </div>
+      
+      <div class="testimonial-form">
+        <h3>Tulis keluh kesahmu</h3>
+        <form id="testimonialForm">
+          <input type="text" id="name" placeholder="Nama" required>
+          <textarea id="message" placeholder="tulis keluh kesahmu disini"></textarea>
+
+          <div class="rating">
+            <span data-value="5">★</span>
+            <span data-value="4">★</span>
+            <span data-value="3">★</span>
+            <span data-value="2">★</span>
+            <span data-value="1">★</span>
+          </div>
+          <input type="hidden" id="rating" required>
+          <button type="submit">Kirim</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <aside id="cart" class="cart" aria-label="Keranjang Belanja" aria-live="polite">
+    <div class="cart-head">
+      <h4>Keranjang</h4>
+      <button class="cart-close" aria-label="Tutup keranjang">&times;</button>
+    </div>
+    <ul id="cartItems" class="cart-items">
+      
+    </ul>
+    <div class="cart-summary">
+      <div class="row">
+        <span>Subtotal</span>
+        <strong id="subtotal">Rp0</strong>
+      </div>
+      <div class="row small">
+        <span>Pajak (10%)</span>
+        <span id="tax">Rp0</span>
+      </div>
+      <div class="row total">
+        <span>Total</span>
+        <strong id="total">Rp0</strong>
+      </div>
+      <button id="payBtn" class="btn-pay" disabled>Bayar</button>
+    </div>
+  </aside>
+
+  <!-- Modal Pembayaran -->
+  <div id="payModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="payTitle" aria-hidden="true">
+    <div class="modal-backdrop"></div>
+    <div class="modal-card" role="document">
+      <div class="modal-body">
+        <h5 id="payTitle">Pembayaran Berhasil 🎉</h5>
+        <p>Terima kasih! Pesananmu sedang diproses. Selamat menikmati!</p>
+      </div>
+      <div class="modal-actions">
+        <button id="closeModal" class="btn-primary">Tutup</button>
+      </div>
+    </div>
+  </div>
+
+  <footer class="about-us" id="about">
+    <div class="about-container">
+      <h2>Tentang Kami</h2>
+      <p>Washi-Washi Cihuyyy siap melayani dengan sushi terbaik khas jepang dengan sentuhan modern dan pastinya halal</p>
+
+      <div class="contact-info">
+        <p><strong>Alamat:</strong> Jl. Jendral Rusdi No.69, Kota Jomokerto</p>
+        <p><strong>Email:</strong> washiwashi77@surat.com</p>
+        <p><strong>No. HP:</strong> +62 812 3456 7890</p>
+      </div>
+
+      <div class="social-media">
+        <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+      </div>
+
+      <div class="map-container">
+        <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.234513091141!2d110.367085!3d-7.801194!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a5784c7e1c9b5%3A0x9e6efb8a5e4cf0!2sBandung!5e0!3m2!1sid!2sid!4v1692345678901"
+        width="100%" height="250" style="border: 0;"
+        allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+      </div>
+    </div>
+    <p class="footer-credit">&copy; <span id="year"></span> Washi‑washi Cihuyyy • Crafted with ❤ by adi guantenge pol.</p>
+  </footer>
+
+  <script src="assets/js/script.js" type="text/javascript"></script>
+</body>
+</html>
